@@ -3,6 +3,7 @@
   * python coding constructs
   * Django Polls App - with Mysql
   * Django Todo App - with Mysql
+  * Django Authentication - with Mysql
 ## Django Polls App - with Mysql
 
 1. Ensure that mysql is installed, python3 and django for polls app - mysite folder.
@@ -46,7 +47,14 @@
 ```
    pip3 install mysqlclient
 ```   
-   
+5. run the migrations
+```
+python3 manage.py migrate
+```
+6. run the server
+```
+python3 manage.py runserver
+``
 ### Workarounds/fixes for errors :
 
 1. sh: mysql_config: command not found
@@ -61,4 +69,32 @@
     sudo ln -s /usr/local/mysql/lib/libmysqlclient.20.dylib /usr/lib/libmysqlclient.20.dylib
   
     sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql
+```
+
+## Django Authentication - with Mysql
+
+1.Create user from the command line
+```
+python manage.py createsuperuser
+```
+2.create a database registration in mysql
+```
+login to mysql by: mysql -uroot
+
+mysql> create database registration;
+```
+3. create newuser and grant privileges to registration database
+```
+mysql> create user 'newuser' identified by 'newuser';
+
+mysql> grant all privileges on registration.* to 'newuser';
+```
+4.run migrations
+```
+python3 manage.py migrate
+
+```
+5.run the server
+```
+python3 manage.py runserver
 ```
