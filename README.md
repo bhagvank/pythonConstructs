@@ -54,7 +54,7 @@ python3 manage.py migrate
 6. run the server
 ```
 python3 manage.py runserver
-``
+```
 ### Workarounds/fixes for errors :
 
 1. sh: mysql_config: command not found
