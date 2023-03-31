@@ -6,5 +6,7 @@ class Truck:
      
     def speed(self, speed):
         return "{} speeding at {}".format(self.name, speed)
-truck = Truck("Wagon","Red")
-print(truck.speed(20))
+     
+if __name__ == "__main__":     
+   truck = Truck("Wagon","Red")
+   print(truck.speed(20))
